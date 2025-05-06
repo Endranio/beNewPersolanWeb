@@ -8,7 +8,8 @@ isGithub:joi.boolean().optional(),
 linkDemo:joi.string().optional(),
 linkGithub:joi.string().optional(),
 tech:joi.string(),
-title:joi.string()
+title:joi.string(),
+image:joi.string()
 })
 
 const updateProject = joi.object<UpdateProjectDTO>({
@@ -18,7 +19,8 @@ isGithub:joi.boolean().optional(),
 linkDemo:joi.string().optional(),
 linkGithub:joi.string().optional(),
 tech:joi.string(),
-title:joi.string()
+title:joi.string(),
+image:joi.string()
 })
 
 export {createProject,updateProject}

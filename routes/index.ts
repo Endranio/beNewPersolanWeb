@@ -9,6 +9,6 @@ const router = express.Router();
 router.use("/profile", profileRouter);
 router.use("/techs", techRouter);
 router.use("/experience", experienceRouter);
-router.use("/project",projectRouter)
+router.use("/projects",projectRouter)
 
 export default router;

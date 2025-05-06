@@ -31,8 +31,9 @@ model Profile {
   position String
   available Boolean
   whatsapp String
+  email String
   cv String
-  image String
+  image String 
  
 
 }
@@ -46,6 +47,7 @@ model Project {
     linkDemo String?
     isDemo Boolean
     isGithub Boolean
+    image String
   
 
 createdAt DateTime @default(now())

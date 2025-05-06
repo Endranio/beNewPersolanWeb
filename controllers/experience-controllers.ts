@@ -1,7 +1,8 @@
 import { Request, Response,NextFunction } from "express";
 import ExperienceService from "../services/experience-service";
 import { updateExperience,createExperience } from "../schemas/experience-schema";
-
+import { v2 as cloudinary, UploadApiResponse } from 'cloudinary'
+import fs from 'fs'
 
 
 
@@ -14,39 +15,57 @@ class Experience {
                  res.status(404).json({ message: "Experience not found" });
               }
             res.json(experience)
-        } catch (error:any) {
-            res.status(400).json({
-                error: error.details[0].message,
-              });
+        } catch (error) {
+            next(error)
         }
     }
 
     async updateExperienceController(req:Request,res:Response,next:NextFunction){
       try {
-        const body = req.body
         const {id} = req.params
+          let uploadImage:UploadApiResponse = {} as UploadApiResponse
+                  if (!req.file) {
+                    res.status(400).json({ message: "missing image file" });
+                    return;
+                  }
+
+          uploadImage = await cloudinary.uploader.upload(req.file.path) 
+                  fs.unlinkSync(req.file.path);
+                  const body = {
+                    ...req.body,
+                    image:uploadImage.secure_url
+                  }
         const validateExperience = await updateExperience.validateAsync(body)
         const update = await ExperienceService.updateExperience(id,validateExperience)
-        res.json({data:{...update},message:"update success"} )
+        res.json({data:{...update},message:"edit success"} )
        
-      } catch (error:any) {
-        res.status(400).json({
-          error: error.details[0].message,
-        });
+      } catch (error) {
+        next(error)
       }
     }
 
      async createExperience(req:Request,res:Response,next:NextFunction){
             try {
-              const body = req.body
+
+              let uploadImage : UploadApiResponse = {} as  UploadApiResponse
+
+              if(!req.file){
+                res.status(400).json({message:"miising image file"})
+                return
+              }
+              uploadImage = await cloudinary.uploader.upload(req.file.path)
+              fs.unlinkSync(req.file.path)
+
+              const body = {
+                ...req.body,
+                image:uploadImage.secure_url
+              }
               const validateExperience = await createExperience.validateAsync(body)
               const create = await ExperienceService.createExperience(validateExperience)
               res.json({data:{...create},message:"create success"} )
              
-            } catch (error:any) {
-              res.status(400).json({
-                error: error.details[0].message,
-              });
+            } catch (error) {
+              next(error)
             }
           }
     

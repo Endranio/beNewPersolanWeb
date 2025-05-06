@@ -11,7 +11,8 @@ class techService {
   async createTech(data: CreateTechStackDTO) {
     return await prisma.techStack.create({
       data: {
-        ...data,
+        tech:data.tech,
+        name:data.name
       },
     });
   }

@@ -2233,6 +2233,7 @@ export namespace Prisma {
     position: string | null
     available: boolean | null
     whatsapp: string | null
+    email: string | null
     cv: string | null
     image: string | null
   }
@@ -2245,6 +2246,7 @@ export namespace Prisma {
     position: string | null
     available: boolean | null
     whatsapp: string | null
+    email: string | null
     cv: string | null
     image: string | null
   }
@@ -2257,6 +2259,7 @@ export namespace Prisma {
     position: number
     available: number
     whatsapp: number
+    email: number
     cv: number
     image: number
     _all: number
@@ -2271,6 +2274,7 @@ export namespace Prisma {
     position?: true
     available?: true
     whatsapp?: true
+    email?: true
     cv?: true
     image?: true
   }
@@ -2283,6 +2287,7 @@ export namespace Prisma {
     position?: true
     available?: true
     whatsapp?: true
+    email?: true
     cv?: true
     image?: true
   }
@@ -2295,6 +2300,7 @@ export namespace Prisma {
     position?: true
     available?: true
     whatsapp?: true
+    email?: true
     cv?: true
     image?: true
     _all?: true
@@ -2380,6 +2386,7 @@ export namespace Prisma {
     position: string
     available: boolean
     whatsapp: string
+    email: string
     cv: string
     image: string
     _count: ProfileCountAggregateOutputType | null
@@ -2409,6 +2416,7 @@ export namespace Prisma {
     position?: boolean
     available?: boolean
     whatsapp?: boolean
+    email?: boolean
     cv?: boolean
     image?: boolean
   }, ExtArgs["result"]["profile"]>
@@ -2421,6 +2429,7 @@ export namespace Prisma {
     position?: boolean
     available?: boolean
     whatsapp?: boolean
+    email?: boolean
     cv?: boolean
     image?: boolean
   }, ExtArgs["result"]["profile"]>
@@ -2433,6 +2442,7 @@ export namespace Prisma {
     position?: boolean
     available?: boolean
     whatsapp?: boolean
+    email?: boolean
     cv?: boolean
     image?: boolean
   }, ExtArgs["result"]["profile"]>
@@ -2445,11 +2455,12 @@ export namespace Prisma {
     position?: boolean
     available?: boolean
     whatsapp?: boolean
+    email?: boolean
     cv?: boolean
     image?: boolean
   }
 
-  export type ProfileOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "description" | "headers" | "location" | "position" | "available" | "whatsapp" | "cv" | "image", ExtArgs["result"]["profile"]>
+  export type ProfileOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "description" | "headers" | "location" | "position" | "available" | "whatsapp" | "email" | "cv" | "image", ExtArgs["result"]["profile"]>
 
   export type $ProfilePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Profile"
@@ -2462,6 +2473,7 @@ export namespace Prisma {
       position: string
       available: boolean
       whatsapp: string
+      email: string
       cv: string
       image: string
     }, ExtArgs["result"]["profile"]>
@@ -2894,6 +2906,7 @@ export namespace Prisma {
     readonly position: FieldRef<"Profile", 'String'>
     readonly available: FieldRef<"Profile", 'Boolean'>
     readonly whatsapp: FieldRef<"Profile", 'String'>
+    readonly email: FieldRef<"Profile", 'String'>
     readonly cv: FieldRef<"Profile", 'String'>
     readonly image: FieldRef<"Profile", 'String'>
   }
@@ -3280,6 +3293,7 @@ export namespace Prisma {
     linkDemo: string | null
     isDemo: boolean | null
     isGithub: boolean | null
+    image: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -3292,6 +3306,7 @@ export namespace Prisma {
     linkDemo: string | null
     isDemo: boolean | null
     isGithub: boolean | null
+    image: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -3305,6 +3320,7 @@ export namespace Prisma {
     linkDemo: number
     isDemo: number
     isGithub: number
+    image: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -3319,6 +3335,7 @@ export namespace Prisma {
     linkDemo?: true
     isDemo?: true
     isGithub?: true
+    image?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -3331,6 +3348,7 @@ export namespace Prisma {
     linkDemo?: true
     isDemo?: true
     isGithub?: true
+    image?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -3344,6 +3362,7 @@ export namespace Prisma {
     linkDemo?: true
     isDemo?: true
     isGithub?: true
+    image?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -3430,6 +3449,7 @@ export namespace Prisma {
     linkDemo: string | null
     isDemo: boolean
     isGithub: boolean
+    image: string
     createdAt: Date
     updatedAt: Date
     _count: ProjectCountAggregateOutputType | null
@@ -3460,6 +3480,7 @@ export namespace Prisma {
     linkDemo?: boolean
     isDemo?: boolean
     isGithub?: boolean
+    image?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["project"]>
@@ -3473,6 +3494,7 @@ export namespace Prisma {
     linkDemo?: boolean
     isDemo?: boolean
     isGithub?: boolean
+    image?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["project"]>
@@ -3486,6 +3508,7 @@ export namespace Prisma {
     linkDemo?: boolean
     isDemo?: boolean
     isGithub?: boolean
+    image?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["project"]>
@@ -3499,11 +3522,12 @@ export namespace Prisma {
     linkDemo?: boolean
     isDemo?: boolean
     isGithub?: boolean
+    image?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type ProjectOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "description" | "tech" | "linkGithub" | "linkDemo" | "isDemo" | "isGithub" | "createdAt" | "updatedAt", ExtArgs["result"]["project"]>
+  export type ProjectOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "description" | "tech" | "linkGithub" | "linkDemo" | "isDemo" | "isGithub" | "image" | "createdAt" | "updatedAt", ExtArgs["result"]["project"]>
 
   export type $ProjectPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Project"
@@ -3517,6 +3541,7 @@ export namespace Prisma {
       linkDemo: string | null
       isDemo: boolean
       isGithub: boolean
+      image: string
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["project"]>
@@ -3950,6 +3975,7 @@ export namespace Prisma {
     readonly linkDemo: FieldRef<"Project", 'String'>
     readonly isDemo: FieldRef<"Project", 'Boolean'>
     readonly isGithub: FieldRef<"Project", 'Boolean'>
+    readonly image: FieldRef<"Project", 'String'>
     readonly createdAt: FieldRef<"Project", 'DateTime'>
     readonly updatedAt: FieldRef<"Project", 'DateTime'>
   }
@@ -6397,6 +6423,7 @@ export namespace Prisma {
     position: 'position',
     available: 'available',
     whatsapp: 'whatsapp',
+    email: 'email',
     cv: 'cv',
     image: 'image'
   };
@@ -6413,6 +6440,7 @@ export namespace Prisma {
     linkDemo: 'linkDemo',
     isDemo: 'isDemo',
     isGithub: 'isGithub',
+    image: 'image',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -6586,6 +6614,7 @@ export namespace Prisma {
     position?: StringFilter<"Profile"> | string
     available?: BoolFilter<"Profile"> | boolean
     whatsapp?: StringFilter<"Profile"> | string
+    email?: StringFilter<"Profile"> | string
     cv?: StringFilter<"Profile"> | string
     image?: StringFilter<"Profile"> | string
   }
@@ -6598,6 +6627,7 @@ export namespace Prisma {
     position?: SortOrder
     available?: SortOrder
     whatsapp?: SortOrder
+    email?: SortOrder
     cv?: SortOrder
     image?: SortOrder
   }
@@ -6613,6 +6643,7 @@ export namespace Prisma {
     position?: StringFilter<"Profile"> | string
     available?: BoolFilter<"Profile"> | boolean
     whatsapp?: StringFilter<"Profile"> | string
+    email?: StringFilter<"Profile"> | string
     cv?: StringFilter<"Profile"> | string
     image?: StringFilter<"Profile"> | string
   }, "id">
@@ -6625,6 +6656,7 @@ export namespace Prisma {
     position?: SortOrder
     available?: SortOrder
     whatsapp?: SortOrder
+    email?: SortOrder
     cv?: SortOrder
     image?: SortOrder
     _count?: ProfileCountOrderByAggregateInput
@@ -6643,6 +6675,7 @@ export namespace Prisma {
     position?: StringWithAggregatesFilter<"Profile"> | string
     available?: BoolWithAggregatesFilter<"Profile"> | boolean
     whatsapp?: StringWithAggregatesFilter<"Profile"> | string
+    email?: StringWithAggregatesFilter<"Profile"> | string
     cv?: StringWithAggregatesFilter<"Profile"> | string
     image?: StringWithAggregatesFilter<"Profile"> | string
   }
@@ -6659,6 +6692,7 @@ export namespace Prisma {
     linkDemo?: StringNullableFilter<"Project"> | string | null
     isDemo?: BoolFilter<"Project"> | boolean
     isGithub?: BoolFilter<"Project"> | boolean
+    image?: StringFilter<"Project"> | string
     createdAt?: DateTimeFilter<"Project"> | Date | string
     updatedAt?: DateTimeFilter<"Project"> | Date | string
   }
@@ -6672,6 +6706,7 @@ export namespace Prisma {
     linkDemo?: SortOrderInput | SortOrder
     isDemo?: SortOrder
     isGithub?: SortOrder
+    image?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -6688,6 +6723,7 @@ export namespace Prisma {
     linkDemo?: StringNullableFilter<"Project"> | string | null
     isDemo?: BoolFilter<"Project"> | boolean
     isGithub?: BoolFilter<"Project"> | boolean
+    image?: StringFilter<"Project"> | string
     createdAt?: DateTimeFilter<"Project"> | Date | string
     updatedAt?: DateTimeFilter<"Project"> | Date | string
   }, "id">
@@ -6701,6 +6737,7 @@ export namespace Prisma {
     linkDemo?: SortOrderInput | SortOrder
     isDemo?: SortOrder
     isGithub?: SortOrder
+    image?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: ProjectCountOrderByAggregateInput
@@ -6720,6 +6757,7 @@ export namespace Prisma {
     linkDemo?: StringNullableWithAggregatesFilter<"Project"> | string | null
     isDemo?: BoolWithAggregatesFilter<"Project"> | boolean
     isGithub?: BoolWithAggregatesFilter<"Project"> | boolean
+    image?: StringWithAggregatesFilter<"Project"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Project"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Project"> | Date | string
   }
@@ -6910,6 +6948,7 @@ export namespace Prisma {
     position: string
     available: boolean
     whatsapp: string
+    email: string
     cv: string
     image: string
   }
@@ -6922,6 +6961,7 @@ export namespace Prisma {
     position: string
     available: boolean
     whatsapp: string
+    email: string
     cv: string
     image: string
   }
@@ -6934,6 +6974,7 @@ export namespace Prisma {
     position?: StringFieldUpdateOperationsInput | string
     available?: BoolFieldUpdateOperationsInput | boolean
     whatsapp?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
     cv?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
   }
@@ -6946,6 +6987,7 @@ export namespace Prisma {
     position?: StringFieldUpdateOperationsInput | string
     available?: BoolFieldUpdateOperationsInput | boolean
     whatsapp?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
     cv?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
   }
@@ -6958,6 +7000,7 @@ export namespace Prisma {
     position: string
     available: boolean
     whatsapp: string
+    email: string
     cv: string
     image: string
   }
@@ -6970,6 +7013,7 @@ export namespace Prisma {
     position?: StringFieldUpdateOperationsInput | string
     available?: BoolFieldUpdateOperationsInput | boolean
     whatsapp?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
     cv?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
   }
@@ -6982,6 +7026,7 @@ export namespace Prisma {
     position?: StringFieldUpdateOperationsInput | string
     available?: BoolFieldUpdateOperationsInput | boolean
     whatsapp?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
     cv?: StringFieldUpdateOperationsInput | string
     image?: StringFieldUpdateOperationsInput | string
   }
@@ -6995,6 +7040,7 @@ export namespace Prisma {
     linkDemo?: string | null
     isDemo: boolean
     isGithub: boolean
+    image: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -7008,6 +7054,7 @@ export namespace Prisma {
     linkDemo?: string | null
     isDemo: boolean
     isGithub: boolean
+    image: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -7021,6 +7068,7 @@ export namespace Prisma {
     linkDemo?: NullableStringFieldUpdateOperationsInput | string | null
     isDemo?: BoolFieldUpdateOperationsInput | boolean
     isGithub?: BoolFieldUpdateOperationsInput | boolean
+    image?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -7034,6 +7082,7 @@ export namespace Prisma {
     linkDemo?: NullableStringFieldUpdateOperationsInput | string | null
     isDemo?: BoolFieldUpdateOperationsInput | boolean
     isGithub?: BoolFieldUpdateOperationsInput | boolean
+    image?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -7047,6 +7096,7 @@ export namespace Prisma {
     linkDemo?: string | null
     isDemo: boolean
     isGithub: boolean
+    image: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -7060,6 +7110,7 @@ export namespace Prisma {
     linkDemo?: NullableStringFieldUpdateOperationsInput | string | null
     isDemo?: BoolFieldUpdateOperationsInput | boolean
     isGithub?: BoolFieldUpdateOperationsInput | boolean
+    image?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -7073,6 +7124,7 @@ export namespace Prisma {
     linkDemo?: NullableStringFieldUpdateOperationsInput | string | null
     isDemo?: BoolFieldUpdateOperationsInput | boolean
     isGithub?: BoolFieldUpdateOperationsInput | boolean
+    image?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -7291,6 +7343,7 @@ export namespace Prisma {
     position?: SortOrder
     available?: SortOrder
     whatsapp?: SortOrder
+    email?: SortOrder
     cv?: SortOrder
     image?: SortOrder
   }
@@ -7303,6 +7356,7 @@ export namespace Prisma {
     position?: SortOrder
     available?: SortOrder
     whatsapp?: SortOrder
+    email?: SortOrder
     cv?: SortOrder
     image?: SortOrder
   }
@@ -7315,6 +7369,7 @@ export namespace Prisma {
     position?: SortOrder
     available?: SortOrder
     whatsapp?: SortOrder
+    email?: SortOrder
     cv?: SortOrder
     image?: SortOrder
   }
@@ -7375,6 +7430,7 @@ export namespace Prisma {
     linkDemo?: SortOrder
     isDemo?: SortOrder
     isGithub?: SortOrder
+    image?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -7387,6 +7443,7 @@ export namespace Prisma {
     linkDemo?: SortOrder
     isDemo?: SortOrder
     isGithub?: SortOrder
+    image?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -7399,6 +7456,7 @@ export namespace Prisma {
     linkDemo?: SortOrder
     isDemo?: SortOrder
     isGithub?: SortOrder
+    image?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }

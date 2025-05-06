@@ -135,6 +135,7 @@ exports.Prisma.ProfileScalarFieldEnum = {
   position: 'position',
   available: 'available',
   whatsapp: 'whatsapp',
+  email: 'email',
   cv: 'cv',
   image: 'image'
 };
@@ -148,6 +149,7 @@ exports.Prisma.ProjectScalarFieldEnum = {
   linkDemo: 'linkDemo',
   isDemo: 'isDemo',
   isGithub: 'isGithub',
+  image: 'image',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
