@@ -26,6 +26,12 @@ async updateProject(id:string,data:UpdateProjectDTO){
     })
 }
 
+async deleteProject(id:string){
+    return await prisma.project.delete({
+        where:{id}
+    })
+}
+
 }
 
 export default new projectService()

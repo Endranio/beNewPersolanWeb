@@ -16,6 +16,12 @@ class techService {
       },
     });
   }
+
+  async deleteTech(id:string){
+    return await prisma.techStack.delete({
+      where:{id}
+    })
+  }
 }
 
 export default new techService();

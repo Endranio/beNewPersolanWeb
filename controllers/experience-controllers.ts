@@ -3,6 +3,7 @@ import ExperienceService from "../services/experience-service";
 import { updateExperience,createExperience } from "../schemas/experience-schema";
 import { v2 as cloudinary, UploadApiResponse } from 'cloudinary'
 import fs from 'fs'
+import experienceService from "../services/experience-service";
 
 
 
@@ -65,6 +66,16 @@ class Experience {
               res.json({data:{...create},message:"create success"} )
              
             } catch (error) {
+              next(error)
+            }
+          }
+
+          async deleteExperience(req:Request,res:Response,next:NextFunction){
+            try{
+              const {id} = req.params
+              await experienceService.deleteExperience(id)
+              res.json({message:"deleted"})
+            }catch(error){
               next(error)
             }
           }

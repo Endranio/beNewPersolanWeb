@@ -1,7 +1,9 @@
 import { v2 as cloudinary } from 'cloudinary'
+import { Request, Response,NextFunction } from "express";
 import dotenv from 'dotenv'
 import multer from 'multer'
 import path from 'path'
+import fs from 'fs'
 
 dotenv.config()
 
@@ -38,3 +40,21 @@ export const upload = multer({
         callback(null,true)
     }
 })
+
+export const cloudinaryUploadMiddleware = async (req:Request, res:Response, next:NextFunction) => {
+    const file = req.file;
+    if (!file){
+        res.status(400).json({ error: 'No file uploaded' });
+        return}
+  
+    try {
+      const result = await cloudinary.uploader.upload(file.path, { folder: 'my-uploads' });
+      fs.unlink(file.path, () => {});
+      (req as any).imageUrl = result.secure_url;
+      next();
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Cloudinary upload failed' });
+      return
+    }
+  };

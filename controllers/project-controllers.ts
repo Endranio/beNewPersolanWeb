@@ -18,20 +18,9 @@ class projectControllers {
   async createProject(req: Request, res: Response, next: NextFunction) {
     try {
 
-      let uploadImage:UploadApiResponse = {} as UploadApiResponse
-      if(!req.file){
-        res.status(400).json({message:"missing image file"})
-        return
-      }
+     
 
-      uploadImage = await cloudinary.uploader.upload(req.file?.path)
-      fs.unlinkSync(req.file?.path)
-
-
-      const body = {
-        ...req.body,
-        image:uploadImage.secure_url
-      };
+      const body = req.body
       const validateProject = await createProject.validateAsync(body)
       const create = await projectService.createProject(validateProject);
       res.json({data:create , message:"create success"});
@@ -63,6 +52,16 @@ class projectControllers {
       res.json({data:update , message:"crete success"});
     } catch (error) {
       next(error);
+    }
+  }
+
+  async deleteProject(req:Request,res:Response,next:NextFunction){
+    try{
+      const {id} = req.params
+      await projectService.deleteProject(id)
+      res.json({message:"deleted"})
+    }catch(error){
+      next(error)
     }
   }
 }

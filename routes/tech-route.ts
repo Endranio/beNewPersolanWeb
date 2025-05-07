@@ -7,5 +7,6 @@ const router = express.Router()
 
 router.get("/",techStack.getTech)
 router.post("/",upload.single('tech'),techStack.createTech)
+router.delete("/:id",techStack.deleteTech)
 
 export default router

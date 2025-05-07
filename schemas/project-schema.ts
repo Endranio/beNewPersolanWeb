@@ -5,9 +5,9 @@ const createProject = joi.object<CreateProjectDTO>({
 description:joi.string(),
 isDemo:joi.boolean().optional(),
 isGithub:joi.boolean().optional(),
-linkDemo:joi.string().optional(),
+linkDemo:joi.string().optional().allow("",null),
 linkGithub:joi.string().optional(),
-tech:joi.string(),
+tech:joi.array(),
 title:joi.string(),
 image:joi.string()
 })
@@ -16,9 +16,9 @@ const updateProject = joi.object<UpdateProjectDTO>({
 description:joi.string(),
 isDemo:joi.boolean().optional(),
 isGithub:joi.boolean().optional(),
-linkDemo:joi.string().optional(),
-linkGithub:joi.string().optional(),
-tech:joi.string(),
+linkDemo:joi.string().optional().allow(null),
+linkGithub:joi.string().optional().allow(null),
+tech:joi.array(),
 title:joi.string(),
 image:joi.string()
 })

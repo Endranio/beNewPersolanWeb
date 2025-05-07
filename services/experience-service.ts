@@ -28,6 +28,12 @@ class ExperienceService {
       },
     });
   }
+
+  async deleteExperience(id:string){
+    return await prisma.experience.delete({
+      where:{id}
+    })
+  }
   
 }
 

@@ -38,6 +38,16 @@ class techStack {
           next(error)
         }
       }
+
+      async deleteTech(req:Request,res:Response,next:NextFunction){
+        try {
+          const { id } = req.params;
+      await techService.deleteTech(id);
+      res.json({message:'deleted'});
+        } catch (error) {
+          next(error)
+        }
+      }
 }
 
 export default new techStack()
