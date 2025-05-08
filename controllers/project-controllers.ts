@@ -33,23 +33,11 @@ class projectControllers {
     try {
       const { id } = req.params;
 
-      let uploadImage:UploadApiResponse ={} as UploadApiResponse
-
-      if(!req.file){
-        res.status(400).json({message:"missing image file"})
-        return
-      }
-
-      uploadImage = await cloudinary.uploader.upload(req.file.path)
-      fs.unlinkSync(req.file.path)
-
-      const body = {
-        ...req.body,
-        image:uploadImage.secure_url
-      }
+    
+      const body = req.body
       const validateProject = await updateProject.validateAsync(body)
       const update = await projectService.updateProject(id, validateProject);
-      res.json({data:update , message:"crete success"});
+      res.json({data:update , message:"edit success"});
     } catch (error) {
       next(error);
     }

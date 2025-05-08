@@ -24,18 +24,7 @@ class Experience {
     async updateExperienceController(req:Request,res:Response,next:NextFunction){
       try {
         const {id} = req.params
-          let uploadImage:UploadApiResponse = {} as UploadApiResponse
-                  if (!req.file) {
-                    res.status(400).json({ message: "missing image file" });
-                    return;
-                  }
-
-          uploadImage = await cloudinary.uploader.upload(req.file.path) 
-                  fs.unlinkSync(req.file.path);
-                  const body = {
-                    ...req.body,
-                    image:uploadImage.secure_url
-                  }
+         const body = req.body
         const validateExperience = await updateExperience.validateAsync(body)
         const update = await ExperienceService.updateExperience(id,validateExperience)
         res.json({data:{...update},message:"edit success"} )
@@ -48,19 +37,8 @@ class Experience {
      async createExperience(req:Request,res:Response,next:NextFunction){
             try {
 
-              let uploadImage : UploadApiResponse = {} as  UploadApiResponse
-
-              if(!req.file){
-                res.status(400).json({message:"miising image file"})
-                return
-              }
-              uploadImage = await cloudinary.uploader.upload(req.file.path)
-              fs.unlinkSync(req.file.path)
-
-              const body = {
-                ...req.body,
-                image:uploadImage.secure_url
-              }
+            
+              const body = req.body
               const validateExperience = await createExperience.validateAsync(body)
               const create = await ExperienceService.createExperience(validateExperience)
               res.json({data:{...create},message:"create success"} )

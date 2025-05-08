@@ -42,7 +42,7 @@ class Profile {
       } catch (error) {
         next(error)
       }
-    }
+    } 
     
 }
 

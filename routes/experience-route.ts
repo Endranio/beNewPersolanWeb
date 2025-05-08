@@ -7,5 +7,6 @@ const router = express.Router()
 router.get("/",experience.getExperience)
 router.patch("/:id",upload.single('image'),experience.updateExperienceController)
 router.post("/",upload.single('image'),experience.createExperience)
+router.delete("/:id",experience.deleteExperience)
 
 export default router 

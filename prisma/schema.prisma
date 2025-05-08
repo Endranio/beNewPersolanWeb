@@ -60,7 +60,7 @@ model Experience {
    image String
     position String
     company String
-    jobDesk String[]
+    jobdesk String[]
     tech String[]
     startDate String
     endDate String

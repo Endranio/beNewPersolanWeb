@@ -4381,7 +4381,7 @@ export namespace Prisma {
     image: number
     position: number
     company: number
-    jobDesk: number
+    jobdesk: number
     tech: number
     startDate: number
     endDate: number
@@ -4418,7 +4418,7 @@ export namespace Prisma {
     image?: true
     position?: true
     company?: true
-    jobDesk?: true
+    jobdesk?: true
     tech?: true
     startDate?: true
     endDate?: true
@@ -4504,7 +4504,7 @@ export namespace Prisma {
     image: string
     position: string
     company: string
-    jobDesk: string[]
+    jobdesk: string[]
     tech: string[]
     startDate: string
     endDate: string
@@ -4534,7 +4534,7 @@ export namespace Prisma {
     image?: boolean
     position?: boolean
     company?: boolean
-    jobDesk?: boolean
+    jobdesk?: boolean
     tech?: boolean
     startDate?: boolean
     endDate?: boolean
@@ -4547,7 +4547,7 @@ export namespace Prisma {
     image?: boolean
     position?: boolean
     company?: boolean
-    jobDesk?: boolean
+    jobdesk?: boolean
     tech?: boolean
     startDate?: boolean
     endDate?: boolean
@@ -4560,7 +4560,7 @@ export namespace Prisma {
     image?: boolean
     position?: boolean
     company?: boolean
-    jobDesk?: boolean
+    jobdesk?: boolean
     tech?: boolean
     startDate?: boolean
     endDate?: boolean
@@ -4573,7 +4573,7 @@ export namespace Prisma {
     image?: boolean
     position?: boolean
     company?: boolean
-    jobDesk?: boolean
+    jobdesk?: boolean
     tech?: boolean
     startDate?: boolean
     endDate?: boolean
@@ -4581,7 +4581,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type ExperienceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "image" | "position" | "company" | "jobDesk" | "tech" | "startDate" | "endDate" | "createdAt" | "updatedAt", ExtArgs["result"]["experience"]>
+  export type ExperienceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "image" | "position" | "company" | "jobdesk" | "tech" | "startDate" | "endDate" | "createdAt" | "updatedAt", ExtArgs["result"]["experience"]>
 
   export type $ExperiencePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Experience"
@@ -4591,7 +4591,7 @@ export namespace Prisma {
       image: string
       position: string
       company: string
-      jobDesk: string[]
+      jobdesk: string[]
       tech: string[]
       startDate: string
       endDate: string
@@ -5024,7 +5024,7 @@ export namespace Prisma {
     readonly image: FieldRef<"Experience", 'String'>
     readonly position: FieldRef<"Experience", 'String'>
     readonly company: FieldRef<"Experience", 'String'>
-    readonly jobDesk: FieldRef<"Experience", 'String[]'>
+    readonly jobdesk: FieldRef<"Experience", 'String[]'>
     readonly tech: FieldRef<"Experience", 'String[]'>
     readonly startDate: FieldRef<"Experience", 'String'>
     readonly endDate: FieldRef<"Experience", 'String'>
@@ -6453,7 +6453,7 @@ export namespace Prisma {
     image: 'image',
     position: 'position',
     company: 'company',
-    jobDesk: 'jobDesk',
+    jobdesk: 'jobdesk',
     tech: 'tech',
     startDate: 'startDate',
     endDate: 'endDate',
@@ -6770,7 +6770,7 @@ export namespace Prisma {
     image?: StringFilter<"Experience"> | string
     position?: StringFilter<"Experience"> | string
     company?: StringFilter<"Experience"> | string
-    jobDesk?: StringNullableListFilter<"Experience">
+    jobdesk?: StringNullableListFilter<"Experience">
     tech?: StringNullableListFilter<"Experience">
     startDate?: StringFilter<"Experience"> | string
     endDate?: StringFilter<"Experience"> | string
@@ -6783,7 +6783,7 @@ export namespace Prisma {
     image?: SortOrder
     position?: SortOrder
     company?: SortOrder
-    jobDesk?: SortOrder
+    jobdesk?: SortOrder
     tech?: SortOrder
     startDate?: SortOrder
     endDate?: SortOrder
@@ -6799,7 +6799,7 @@ export namespace Prisma {
     image?: StringFilter<"Experience"> | string
     position?: StringFilter<"Experience"> | string
     company?: StringFilter<"Experience"> | string
-    jobDesk?: StringNullableListFilter<"Experience">
+    jobdesk?: StringNullableListFilter<"Experience">
     tech?: StringNullableListFilter<"Experience">
     startDate?: StringFilter<"Experience"> | string
     endDate?: StringFilter<"Experience"> | string
@@ -6812,7 +6812,7 @@ export namespace Prisma {
     image?: SortOrder
     position?: SortOrder
     company?: SortOrder
-    jobDesk?: SortOrder
+    jobdesk?: SortOrder
     tech?: SortOrder
     startDate?: SortOrder
     endDate?: SortOrder
@@ -6831,7 +6831,7 @@ export namespace Prisma {
     image?: StringWithAggregatesFilter<"Experience"> | string
     position?: StringWithAggregatesFilter<"Experience"> | string
     company?: StringWithAggregatesFilter<"Experience"> | string
-    jobDesk?: StringNullableListFilter<"Experience">
+    jobdesk?: StringNullableListFilter<"Experience">
     tech?: StringNullableListFilter<"Experience">
     startDate?: StringWithAggregatesFilter<"Experience"> | string
     endDate?: StringWithAggregatesFilter<"Experience"> | string
@@ -7134,7 +7134,7 @@ export namespace Prisma {
     image: string
     position: string
     company: string
-    jobDesk?: ExperienceCreatejobDeskInput | string[]
+    jobdesk?: ExperienceCreatejobdeskInput | string[]
     tech?: ExperienceCreatetechInput | string[]
     startDate: string
     endDate: string
@@ -7147,7 +7147,7 @@ export namespace Prisma {
     image: string
     position: string
     company: string
-    jobDesk?: ExperienceCreatejobDeskInput | string[]
+    jobdesk?: ExperienceCreatejobdeskInput | string[]
     tech?: ExperienceCreatetechInput | string[]
     startDate: string
     endDate: string
@@ -7160,7 +7160,7 @@ export namespace Prisma {
     image?: StringFieldUpdateOperationsInput | string
     position?: StringFieldUpdateOperationsInput | string
     company?: StringFieldUpdateOperationsInput | string
-    jobDesk?: ExperienceUpdatejobDeskInput | string[]
+    jobdesk?: ExperienceUpdatejobdeskInput | string[]
     tech?: ExperienceUpdatetechInput | string[]
     startDate?: StringFieldUpdateOperationsInput | string
     endDate?: StringFieldUpdateOperationsInput | string
@@ -7173,7 +7173,7 @@ export namespace Prisma {
     image?: StringFieldUpdateOperationsInput | string
     position?: StringFieldUpdateOperationsInput | string
     company?: StringFieldUpdateOperationsInput | string
-    jobDesk?: ExperienceUpdatejobDeskInput | string[]
+    jobdesk?: ExperienceUpdatejobdeskInput | string[]
     tech?: ExperienceUpdatetechInput | string[]
     startDate?: StringFieldUpdateOperationsInput | string
     endDate?: StringFieldUpdateOperationsInput | string
@@ -7186,7 +7186,7 @@ export namespace Prisma {
     image: string
     position: string
     company: string
-    jobDesk?: ExperienceCreatejobDeskInput | string[]
+    jobdesk?: ExperienceCreatejobdeskInput | string[]
     tech?: ExperienceCreatetechInput | string[]
     startDate: string
     endDate: string
@@ -7199,7 +7199,7 @@ export namespace Prisma {
     image?: StringFieldUpdateOperationsInput | string
     position?: StringFieldUpdateOperationsInput | string
     company?: StringFieldUpdateOperationsInput | string
-    jobDesk?: ExperienceUpdatejobDeskInput | string[]
+    jobdesk?: ExperienceUpdatejobdeskInput | string[]
     tech?: ExperienceUpdatetechInput | string[]
     startDate?: StringFieldUpdateOperationsInput | string
     endDate?: StringFieldUpdateOperationsInput | string
@@ -7212,7 +7212,7 @@ export namespace Prisma {
     image?: StringFieldUpdateOperationsInput | string
     position?: StringFieldUpdateOperationsInput | string
     company?: StringFieldUpdateOperationsInput | string
-    jobDesk?: ExperienceUpdatejobDeskInput | string[]
+    jobdesk?: ExperienceUpdatejobdeskInput | string[]
     tech?: ExperienceUpdatetechInput | string[]
     startDate?: StringFieldUpdateOperationsInput | string
     endDate?: StringFieldUpdateOperationsInput | string
@@ -7498,7 +7498,7 @@ export namespace Prisma {
     image?: SortOrder
     position?: SortOrder
     company?: SortOrder
-    jobDesk?: SortOrder
+    jobdesk?: SortOrder
     tech?: SortOrder
     startDate?: SortOrder
     endDate?: SortOrder
@@ -7577,7 +7577,7 @@ export namespace Prisma {
     set?: Date | string
   }
 
-  export type ExperienceCreatejobDeskInput = {
+  export type ExperienceCreatejobdeskInput = {
     set: string[]
   }
 
@@ -7585,7 +7585,7 @@ export namespace Prisma {
     set: string[]
   }
 
-  export type ExperienceUpdatejobDeskInput = {
+  export type ExperienceUpdatejobdeskInput = {
     set?: string[]
     push?: string | string[]
   }

@@ -159,7 +159,7 @@ exports.Prisma.ExperienceScalarFieldEnum = {
   image: 'image',
   position: 'position',
   company: 'company',
-  jobDesk: 'jobDesk',
+  jobdesk: 'jobdesk',
   tech: 'tech',
   startDate: 'startDate',
   endDate: 'endDate',
