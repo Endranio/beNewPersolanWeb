@@ -44,12 +44,12 @@ export const upload = multer({
 export const cloudinaryUploadMiddleware = async (req:Request, res:Response, next:NextFunction) => {
     const file = req.file;
     if (!file){
-        res.status(400).json({ error: 'No file uploaded' });
-        return}
+    next()   
+    }
   
     try {
-      const result = await cloudinary.uploader.upload(file.path, { folder: 'my-uploads' });
-      fs.unlink(file.path, () => {});
+      const result = await cloudinary.uploader.upload(file?.path ||"", { folder: 'my-uploads' });
+      fs.unlink(file?.path || "", () => {});
       (req as any).imageUrl = result.secure_url;
       next();
     } catch (err) {

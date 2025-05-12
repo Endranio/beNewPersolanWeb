@@ -21,6 +21,6 @@ linkGithub:joi.string().optional().allow(null),
 tech:joi.array(),
 title:joi.string(),
 image:joi.string()
-})
+}) 
 
 export {createProject,updateProject}

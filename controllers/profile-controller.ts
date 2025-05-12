@@ -22,18 +22,7 @@ class Profile {
     async updateProfileController(req:Request,res:Response,next:NextFunction){
       try {
 
-         let uploadImage:UploadApiResponse = {} as UploadApiResponse
-                  if (!req.file) {
-                    res.status(400).json({ message: "missing image file" });
-                    return;
-                  }
-
-        uploadImage = await cloudinary.uploader.upload(req.file.path) 
-                fs.unlinkSync(req.file.path);
-                const body = {
-                  ...req.body,
-                  image:uploadImage.secure_url
-                }
+        const body = req.body
 
         const validateProfile = await updateProfile.validateAsync(body)
         const update = await ProfileService.updateProfile(validateProfile)

@@ -11,7 +11,7 @@ class ProfileService {
   async updateProfile(data: UpdateProfileDTO) {
     return await prisma.profile.update({
       where: {
-        id: "a8beeb10-16ad-4de9-80ef-e99b05662bb7",
+        id: "cf7b1844-8cef-42f1-a737-3026acf604dc",
       },
       data,
     });

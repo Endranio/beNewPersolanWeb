@@ -10,6 +10,7 @@ const updateProfile = joi.object<UpdateProfileDTO>({
   location: joi.string(),
   position: joi.string(),
   whatsapp: joi.string(),
+  image:joi.string()
 });
 
 export { updateProfile };
