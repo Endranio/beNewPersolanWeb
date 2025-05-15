@@ -12,6 +12,7 @@ class Experience {
     async getExperience(req:Request,res:Response,next:NextFunction){
         try {
             const experience = await ExperienceService.getExperience()
+           
             if (!experience) {
                  res.status(404).json({ message: "Experience not found" });
               }

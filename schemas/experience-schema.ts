@@ -17,7 +17,7 @@ const updateExperience = joi.object<CreateExperienceDTO>({
     endDate:joi.string(),
     position:joi.string(),
     startDate:joi.string(),
-    tech:joi.array(),
+    tech:joi.array().min(1),
     image:joi.string()
     
 })
