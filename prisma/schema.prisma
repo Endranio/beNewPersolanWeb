@@ -39,8 +39,8 @@ model Profile {
 }
 
 model Project {
-  id String  @id @default(uuid())
-  title String
+    id String  @id @default(uuid())
+    title String
     description String
     tech String[]
     linkGithub String?
@@ -50,7 +50,7 @@ model Project {
     image String
   
 
-createdAt DateTime @default(now())
+ createdAt DateTime @default(now())
  updatedAt DateTime @default(now())
 }
 
@@ -69,7 +69,7 @@ model Experience {
 
 
     createdAt DateTime @default(now())
- updatedAt DateTime @default(now())
+    updatedAt DateTime @default(now())
 }
 
 model TechStack {

@@ -14,8 +14,8 @@ image:joi.string()
 
 const updateProject = joi.object<UpdateProjectDTO>({
 description:joi.string(),
-isDemo:joi.boolean().optional(),
-isGithub:joi.boolean().optional(),
+isDemo:joi.boolean(),
+isGithub:joi.boolean(),
 linkDemo:joi.string().optional().allow(null),
 linkGithub:joi.string().optional().allow(null),
 tech:joi.array(),

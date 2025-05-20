@@ -1,9 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import projectService from "../services/project-service";
 import { updateProject,createProject } from "../schemas/project-schema";
-import { UploadApiResponse } from "cloudinary";
-import {v2 as cloudinary} from 'cloudinary'
-import fs from 'fs'
+
 
 class projectControllers {
   async getAllProject(req: Request, res: Response, next: NextFunction) {
