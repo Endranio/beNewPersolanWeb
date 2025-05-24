@@ -52,7 +52,7 @@ export async function check(req: Request, res: Response, next: NextFunction) {
     const payload = (req as any).user
    
     const dataUser = await authService.getUserByEmail(payload.email)
-console.log(dataUser)
+// console.log(dataUser)
     res.json(dataUser);
   } catch (error) {
     next(error)

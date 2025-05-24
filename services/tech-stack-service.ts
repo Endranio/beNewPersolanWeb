@@ -8,6 +8,12 @@ class techService {
     return await prisma.techStack.findMany();
   }
 
+  async getTechById(id:string){
+    return await prisma.techStack.findUnique({
+      where:{id}
+    })
+  }
+
   async createTech(data: CreateTechStackDTO) {
     return await prisma.techStack.create({
       data: {

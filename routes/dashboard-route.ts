@@ -1,7 +1,7 @@
 import express from 'express'
-import experience from '../controllers/experience-controllers'
-import {upload} from '../middlewares/image-middleware'
 import CountData from '../controllers/count-controller'
+import AuthCheck from '../middlewares/auth-middleware'
+
 
 const router = express.Router()
 

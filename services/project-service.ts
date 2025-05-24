@@ -1,38 +1,39 @@
-import { CreateProjectDTO, UpdateProjectDTO } from '../dtos/dto'
-import {PrismaClient} from '../generated/prisma'
+import { CreateProjectDTO, UpdateProjectDTO } from "../dtos/dto";
+import { PrismaClient } from "../generated/prisma";
 
-const prisma = new PrismaClient()
+const prisma = new PrismaClient();
 
 class projectService {
+  async getProject() {
+    return await prisma.project.findMany();
+  }
 
-async getProject(){
-    return await prisma.project.findMany()
-}
+  async getProjectById(id: string) {
+    return await prisma.project.findUnique({ where: { id } });
+  }
 
-async createProject(data:CreateProjectDTO){
+  async createProject(data: CreateProjectDTO) {
     return await prisma.project.create({
-        data:{
-            ...data
-        }
-    })
-}
+      data: {
+        ...data,
+      },
+    });
+  }
 
-async updateProject(id:string,data:UpdateProjectDTO){
+  async updateProject(id: string, data: UpdateProjectDTO) {
     return await prisma.project.update({
-        where:{id},
-        data:{
-            ...data
-        }
-    })
-}
+      where: { id },
+      data: {
+        ...data,
+      },
+    });
+  }
 
-async deleteProject(id:string){
+  async deleteProject(id: string) {
     return await prisma.project.delete({
-        where:{id}
-    })
+      where: { id },
+    });
+  }
 }
 
-}
-
-export default new projectService()
-
+export default new projectService();

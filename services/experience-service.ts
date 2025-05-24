@@ -12,6 +12,10 @@ class ExperienceService {
     return await prisma.experience.findMany();
   }
 
+  async getExperienceById(id:string){
+    return await prisma.experience.findUnique({where:{id}})
+  }
+
   async updateExperience(id: string, data: UpdateExperienceDTO) {
     return await prisma.experience.update({
       where: {

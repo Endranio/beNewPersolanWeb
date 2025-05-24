@@ -4,6 +4,7 @@ import { updateExperience,createExperience } from "../schemas/experience-schema"
 import { v2 as cloudinary, UploadApiResponse } from 'cloudinary'
 import fs from 'fs'
 import experienceService from "../services/experience-service";
+import { extractPublicId } from "cloudinary-build-url";
 
 
 
@@ -25,6 +26,14 @@ class Experience {
     async updateExperienceController(req:Request,res:Response,next:NextFunction){
       try {
         const {id} = req.params
+        const experience = await experienceService.getExperienceById(id)
+              const image = experience?.image
+              if(!image){
+                res.status(400).json({message:"image not found"})
+                return
+              }
+              const publicId = extractPublicId(image)
+              await cloudinary.uploader.destroy(publicId)
          const body = req.body
         const validateExperience = await updateExperience.validateAsync(body)
         const update = await ExperienceService.updateExperience(id,validateExperience)
@@ -52,6 +61,14 @@ class Experience {
           async deleteExperience(req:Request,res:Response,next:NextFunction){
             try{
               const {id} = req.params
+              const experience = await experienceService.getExperienceById(id)
+              const image = experience?.image
+              if(!image){
+                res.status(400).json({message:"image not found"})
+                return
+              }
+              const publicId = extractPublicId(image)
+              await cloudinary.uploader.destroy(publicId)
               await experienceService.deleteExperience(id)
               res.json({message:"deleted"})
             }catch(error){

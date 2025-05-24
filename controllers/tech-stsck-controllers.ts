@@ -1,7 +1,8 @@
 import { Request, Response, NextFunction } from "express";
 import techService from "../services/tech-stack-service";
 import { createTechStack } from "../schemas/tech-stack-schema";
-import { v2 as cloudinary, UploadApiResponse } from 'cloudinary'
+import { v2 as cloudinary, } from 'cloudinary'
+import { extractPublicId } from "cloudinary-build-url";
 import fs from 'fs'
 
 class techStack {
@@ -17,17 +18,10 @@ class techStack {
 
   async createTech(req:Request,res:Response,next:NextFunction){
         try {
-          let uploadImage:UploadApiResponse = {} as UploadApiResponse
-          if (!req.file) {
-            res.status(400).json({ message: "missing image file" });
-            return;
-          }
-
-          uploadImage = await cloudinary.uploader.upload(req.file.path) 
-          fs.unlinkSync(req.file.path);
+          
           const body = {
             ...req.body,
-            tech:uploadImage.secure_url
+            tech:req.file?.path
           }
   
           const validateTech = await createTechStack.validateAsync(body)
@@ -42,6 +36,15 @@ class techStack {
       async deleteTech(req:Request,res:Response,next:NextFunction){
         try {
           const { id } = req.params;
+          const Tech = await techService.getTechById(id)
+          if(!Tech){
+            res.status(400).json({massage:"image not found"})
+            return
+          }
+          const image = Tech.tech
+          const publicId = extractPublicId(image)
+          
+          await cloudinary.uploader.destroy(publicId)
       await techService.deleteTech(id);
       res.json({message:'deleted'});
         } catch (error) {

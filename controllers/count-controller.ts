@@ -15,6 +15,8 @@ export default async function CountData(
     const ExperienceCount = Experience.length;
     const ProjectCount = Project.length;
     const techStackCount = techStack.length;
+  //  const (req as any ) = 
+
 
     const data = {
       ExperienceCount,

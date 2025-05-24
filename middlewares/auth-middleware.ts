@@ -3,18 +3,24 @@ import jwt from 'jsonwebtoken'
 
 
 export default function AuthCheck(req:Request,res:Response,next:NextFunction){
-    const token = req.headers["authorization"] || ""
-    const jwtSecret = process.env.JWT_TOKEN || ""
-    const user = jwt.verify(token,jwtSecret)
+    let token = req.headers['authorization'] || '';
+    console.log(token,"ini")
 
-    if(!user){
-        res.status(401).json({
-            message:"unauthorized"
-        })
-        return
-    }
+  if (token.split(' ').length > 1) {
+    token = token.split(' ')[1];
+    console.log(token)
+  }
+  const jwtSecret = process.env.JWT_TOKEN || '';
+  const user = jwt.verify(token, jwtSecret);
 
-    (req as any).user = user
+  if (!user) {
+    res.status(401).json({
+      message: 'User not found',
+    });
+    return;
+  }
 
-    next()
+  (req as any).user = user;
+
+  next();
 }
