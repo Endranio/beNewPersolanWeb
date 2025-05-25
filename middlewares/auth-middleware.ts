@@ -4,11 +4,11 @@ import jwt from 'jsonwebtoken'
 
 export default function AuthCheck(req:Request,res:Response,next:NextFunction){
     let token = req.headers['authorization'] || '';
-    console.log(token,"ini")
+   
 
   if (token.split(' ').length > 1) {
     token = token.split(' ')[1];
-    console.log(token)
+   
   }
   const jwtSecret = process.env.JWT_TOKEN || '';
   const user = jwt.verify(token, jwtSecret);
