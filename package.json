@@ -14,7 +14,8 @@
   "description": "",
   "dependencies": {
     "@prisma/client": "^6.7.0",
-    "bcrypt": "^5.1.1",
+    "@types/bcryptjs": "^2.4.6",
+    "bcryptjs": "^3.0.2",
     "cloudinary": "^2.6.1",
     "cloudinary-build-url": "^0.2.4",
     "dotenv": "^16.5.0",
@@ -25,7 +26,6 @@
     "multer-storage-cloudinary": "^4.0.0"
   },
   "devDependencies": {
-    "@types/bcrypt": "^5.0.2",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.1",
     "@types/jsonwebtoken": "^9.0.9",

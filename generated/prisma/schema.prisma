@@ -17,7 +17,7 @@ datasource db {
 model User {
   id       String @id @default(uuid())
   username String
-  email    String
+  email    String @unique
   password String
 }
 
@@ -54,7 +54,7 @@ model Experience {
   image     String
   position  String
   company   String
-  jobDesk   String[]
+  jobdesk   String[]
   tech      String[]
   startDate String
   endDate   String

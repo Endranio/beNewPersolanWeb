@@ -33,7 +33,7 @@ async function main() {
         image: "https://upload.wikimedia.org/wikipedia/commons/4/44/Googleplex-Patio-Aug-2014.JPG",
         position: "Frontend Developer",
         company: "Google",
-        jobDesk: ["Developed user-facing features\nOptimized web performance\nCollaborated with designers"],
+        jobdesk: ["Developed user-facing features\nOptimized web performance\nCollaborated with designers"],
         tech: ["React,TypeScript,Redux"],
         startDate: "2022-06-01",
         endDate: "2022-12-2",
@@ -42,7 +42,7 @@ async function main() {
         image: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
         position: "Software Engineer",
         company: "Amazon",
-        jobDesk: ["Built scalable APIs\nImproved database queries\nWorked with cross-functional teams"],
+        jobdesk: ["Built scalable APIs\nImproved database queries\nWorked with cross-functional teams"],
         tech: ["Node.js,Express,PostgreSQL"],
         startDate:"2020-01-15",
         endDate: "2022-05-30"

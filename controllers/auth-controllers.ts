@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { loginSchema } from "../schemas/login-schema";
 import authService from "../services/auth-service";
-import bcrypt from "bcrypt";
+import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
 
 export default async function LoginController(
@@ -22,7 +22,7 @@ export default async function LoginController(
       return;
     }
 
-    const passwordMatch = await bcrypt.compare(password, user.password);
+    const passwordMatch = await bcryptjs.compare(password, user.password);
     if (!passwordMatch) {
       res.status(404).json({
         message: "email/password wrong",
