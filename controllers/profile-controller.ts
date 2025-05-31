@@ -2,7 +2,6 @@ import { Request, Response,NextFunction } from "express";
 import ProfileService from "../services/profile-service";
 import { updateProfile } from "../schemas/profile-schema";
 import { v2 as cloudinary,  } from 'cloudinary'
-import fs from 'fs'
 import { extractPublicId } from "cloudinary-build-url";
 
 
@@ -13,7 +12,7 @@ class Profile {
     async getProfile(req:Request,res:Response,next:NextFunction){
         try {
             const profile = await ProfileService.getProfile()
-           
+          
             res.json(profile)
         } catch (error) {
             next(error)
@@ -25,11 +24,15 @@ class Profile {
 
         const body = req.body
         
+        const image = await ProfileService.getProfile()
+        if(!image){
+          res.json({message:"not found"})
+          return
+        }
+        const publicId = extractPublicId(image.image)
+        cloudinary.uploader.destroy(publicId)
         const validateProfile = await updateProfile.validateAsync(body)
         const update = await ProfileService.updateProfile(validateProfile)
-        const image = update.image
-        const publicId = extractPublicId(image)
-        cloudinary.uploader.destroy(publicId)
         
         res.json({data:{...update},message:"edit success"} )
        

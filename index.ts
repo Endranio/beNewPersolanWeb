@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request,Response } from "express";
 import Router from "./routes/index";
 import { errorHandler } from "./middlewares/error-middleware";
 import cors from "cors";
@@ -11,12 +11,12 @@ app.use(
   cors({
     origin: ["http://localhost:3000"],
   })
-  
 );
-
 app.use(express.json());
 
+
 app.use(Router);
+
 app.post("/upload", cloudinaryStorage.single("image"), (req, res) => {
   res.json({ imageUrl: req.file?.path });
 });
