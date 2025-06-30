@@ -1,7 +1,6 @@
 import express from 'express'
 import techStack from '../controllers/tech-stsck-controllers'
 import {cloudinaryStorage} from '../middlewares/image-middleware'
-// import AuthCheck from '../middlewares/auth-middleware'
 
 
 const router = express.Router()

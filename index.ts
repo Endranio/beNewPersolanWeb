@@ -9,7 +9,7 @@ const port = 5000;
 
 app.use(
   cors({
-    origin: ["http://localhost:3000","https://personalweb-endra.up.railway.app"],
+    origin: ["http://localhost:3000","https://personalweb-endra.up.railway.app","https://fe-personal-web.vercel.app"],
   })
 );
 app.use(express.json());
