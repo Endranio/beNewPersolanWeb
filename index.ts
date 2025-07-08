@@ -14,14 +14,16 @@ app.use(
 );
 app.use(express.json());
 
+app.get("/",(req,res)=>{
+  res.send("Hello Personal Web")
+})
 
 app.use(Router);
+
 
 app.post("/upload", cloudinaryStorage.single("image"), (req, res) => {
   res.json({ imageUrl: req.file?.path });
 });
 app.use(errorHandler);
 
-app.listen(port, () => {
-  console.log(`port berjalan di ${port}`);
-});
+export default app
