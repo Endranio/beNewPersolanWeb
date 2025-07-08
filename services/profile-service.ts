@@ -1,5 +1,5 @@
 import { UpdateProfileDTO } from "../dtos/dto";
-import { PrismaClient } from "../generated/prisma";
+import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
