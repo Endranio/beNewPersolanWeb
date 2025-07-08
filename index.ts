@@ -24,6 +24,7 @@ app.use(Router);
 app.post("/upload", cloudinaryStorage.single("image"), (req, res) => {
   res.json({ imageUrl: req.file?.path });
 });
+
 app.use(errorHandler);
 
 export default app

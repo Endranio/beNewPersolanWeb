@@ -17,7 +17,7 @@
     "@prisma/client": "^6.7.0",
     "@types/bcryptjs": "^2.4.6",
     "bcryptjs": "^3.0.2",
-    "cloudinary": "^2.6.1",
+    "cloudinary": "^1.41.3",
     "cloudinary-build-url": "^0.2.4",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
